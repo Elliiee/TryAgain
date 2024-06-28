@@ -1,4 +1,5 @@
-def combine(self, n: int, k: int) ->List[List[int]]:
+from typing import List
+def combine(n: int, k: int) ->List[List[int]]:
     path, result = [], []
 
     def backtrack(n, k, startNum):
@@ -9,7 +10,9 @@ def combine(self, n: int, k: int) ->List[List[int]]:
             path.append(i)
             backtrack(n, k, i+1)
             path.pop()
+
     backtrack(n, k, 1)
     return result 
 
-print("test")
+answer = combine(4, 2)
+print(answer)
